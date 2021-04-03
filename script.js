@@ -69,7 +69,7 @@ class Table {
   }
   setLimit(limit) {
     this.limit = +limit;
-    this.showData();
+    this.setPage(1);
   }
   search(text) {
     this.currentData = this.data.filter((e) => {
@@ -82,7 +82,7 @@ class Table {
       }
       return found;
     });
-    this.showData();
+    this.setPage(1);
   }
   sort(by) {
     if (by === this.by) {
@@ -113,7 +113,7 @@ class Table {
       }
       return result * this.order;
     });
-    this.showData();
+    this.setPage(1);
   }
 }
 
