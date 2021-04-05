@@ -48,10 +48,10 @@ class Table {
   updatePagination() {
     const { list, nextBtn, prevBtn, infor } = this.pagination;
     const pageCount = Math.ceil(this.currentData.length / this.limit);
-    if (this.page === 1) prevBtn.ariaDisabled = true;
-    else prevBtn.ariaDisabled = false;
-    if (this.page === pageCount) nextBtn.ariaDisabled = true;
-    else nextBtn.ariaDisabled = false;
+    if (this.page === 1) prevBtn.classList.add("disabled");
+    else prevBtn.classList.remove("disabled");
+    if (this.page === pageCount) nextBtn.classList.add("disabled");
+    else nextBtn.classList.remove("disabled");
     list.innerHTML = "";
 
     for (let i = 1; i <= pageCount; i++) {
